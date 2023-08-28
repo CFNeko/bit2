@@ -16,61 +16,49 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    booking.cpp \
+    changedescriptionpage.cpp \
+    changepasswordpage.cpp \
+    changephonenumberpage.cpp \
     doctorpage.cpp \
-    healthevaluation.cpp \
-    homepage.cpp \
+    informationpage.cpp \
     main.cpp \
+    mainwindow.cpp \
+    navigationbar.cpp \
     navigationdesign.cpp \
-    prescriptioninquiry.cpp \
-    prescriptiontable.cpp \
-    recorditemtable.cpp \
-    registerweb.cpp \
-    registraitondoctorpage.cpp \
-    signup.cpp \
+    prescriptionpage.cpp \
+    recorditempage.cpp \
+    registrationpage.cpp \
     userfriendlyitems.cpp
 
 HEADERS += \
-    booking.h \
+    changedescriptionpage.h \
+    changepasswordpage.h \
+    changephonenumberpage.h \
     doctorpage.h \
-    healthevaluation.h \
-    homepage.h \
+    informationpage.h \
+    mainwindow.h \
+    navigationbar.h \
     navigationdesign.h \
-    prescriptioninquiry.h \
-    prescriptiontable.h \
-    recorditemtable.h \
-    registerweb.h \
-    registraitondoctorpage.h \
-    signup.h \
+    prescriptionpage.h \
+    recorditempage.h \
+    registrationpage.h \
     userfriendlyitems.h
 
 FORMS += \
-    booking.ui \
+    changedescriptionpage.ui \
+    changepasswordpage.ui \
+    changephonenumberpage.ui \
     doctorpage.ui \
-    healthevaluation.ui \
-    homepage.ui \
-    listtemplate.ui \
-    msgitem.ui \
+    informationpage.ui \
+    mainwindow.ui \
+    navigationbar.ui \
     navigationdesign.ui \
-    prescriptioninquiry.ui \
-    prescriptiontable.ui \
-    recorditemtable.ui \
-    registerweb.ui \
-    registraitondoctorpage.ui \
-    signup.ui \
+    prescriptionpage.ui \
+    recorditempage.ui \
+    registrationpage.ui \
     userfriendlyitems.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    customcomponent-dev/customcomponent-dev/listwidget/listwidget.qrc \
-    resources.qrc
-
-DISTFILES += \
-    resource111/logo.jpg
-
-SUBDIRS += \
-    uidemo08/uidemo08.pro

@@ -113,6 +113,14 @@ HomePage::HomePage(QWidget *parent) :
                                                   "QPushButton:released {"
                                                   "border-style: none;"  // 恢复无边框样式
                                                   "}");
+
+//       建立新的连接
+       connect(ui->health_evaluate, &QPushButton::clicked, this, [=]()
+       {
+           HealthEvaluation *h = new HealthEvaluation;
+           h->show();
+           this->hide();
+       });
 }
 
 HomePage::~HomePage()
