@@ -1,0 +1,59 @@
+QLabel[labeltype="passwdprompt"]{
+    font-size: 14px;
+    color: #80858E;
+}
+
+QLabel[labeltype="passwdpromptwarning"]{
+    font-size: 14px;
+    color: #FF4324;
+}
+
+QLabel[labeltype="passwdlevelweak"]{
+    font-size: 16px;
+    color: #E78585;
+}
+
+QLabel[labeltype="passwdlevelmedium"]{
+    font-size: 16px;
+    color: #F7B93A;
+}
+
+QLabel[labeltype="passwdlevelstrong"]{
+    font-size: 16px;
+    color: #66BD98;
+}
+
+QProgressBar
+{
+    border:0px;
+    background:#CDD3DB;
+}
+
+QProgressBar[level="weak"]::chunk
+{
+    background: #E78585;
+}
+
+QProgressBar[level="medium"]::chunk
+{
+    background: #F7B93A;
+}
+
+QProgressBar[level="strong"]::chunk
+{
+    background: #66BD98;
+}
+
+QLineEdit, QSpinBox
+{
+    padding: 5px 5px;
+    border:1px solid #D1D4D9;
+    background:#FFFFFF;
+    font-size: 16px;
+    color: #2D3B4E;
+}
+
+QLineEdit:hover, QSpinBox:hover
+{
+    background: #F5F7F8;
+}

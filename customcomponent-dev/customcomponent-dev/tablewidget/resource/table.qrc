@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/table">
+        <file>table.qss</file>
+        <file>arrow-down.png</file>
+        <file>arrow-down_hover.png</file>
+        <file>arrow-up.png</file>
+        <file>arrow-up_checked.png</file>
+        <file>arrow-up_hover.png</file>
+        <file>arrow-down_checked.png</file>
+        <file>arrow-down_pressed.png</file>
+        <file>arrow-up_pressed.png</file>
+        <file>checkbox.png</file>
+        <file>checkbox_checked.png</file>
+        <file>checkbox_checked_hover.png</file>
+        <file>checkbox_checked_pressed.png</file>
+        <file>checkbox_hover.png</file>
+        <file>checkbox_pressed.png</file>
+        <file>checkbox_part.png</file>
+        <file>checkbox_part_hover.png</file>
+        <file>checkbox_part_pressed.png</file>
+    </qresource>
+    <qresource prefix="/pagenavigation">
+        <file>left_hover.png</file>
+        <file>left_pressed.png</file>
+        <file>pagenavigation.qss</file>
+        <file>right.png</file>
+        <file>right_hover.png</file>
+        <file>right_pressed.png</file>
+        <file>arrow_left.png</file>
+        <file>arrow_left_hover.png</file>
+        <file>arrow_left_pressed.png</file>
+        <file>arrow_right.png</file>
+        <file>arrow_right_hover.png</file>
+        <file>arrow_right_pressed.png</file>
+        <file>left.png</file>
+    </qresource>
+</RCC>

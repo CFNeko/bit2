@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/1"/>
+    <qresource prefix="/">
+        <file>resource111/logo.jpg</file>
+        <file>resource111/4.png</file>
+        <file>resource111/3.png</file>
+        <file>resource111/2.png</file>
+        <file>resource111/1.png</file>
+        <file>resource111/background.jpg</file>
+        <file>resource111/patient_avatar.jpg</file>
+        <file>resource111/bubble1.png</file>
+        <file>resource111/table.png</file>
+        <file>resource111/record_item.png</file>
+        <file>resource111/background1.jpg</file>
+        <file>resource111/background2.jpg</file>
+    </qresource>
+</RCC>

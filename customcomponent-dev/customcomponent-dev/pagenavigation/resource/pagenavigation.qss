@@ -1,0 +1,115 @@
+QLabel[type="tips"]
+{
+	font-size: 14px;
+    color: #2D3B4E;
+}
+
+QPushButton[type="pnprev"]
+{
+	border-image: url(:/pagenavigation/right.png);
+	qproperty-minimumSize: 24px 24px;
+	qproperty-maximumSize: 24px 24px;
+}
+QPushButton[type="pnprev"]:hover
+{
+	border-image: url(:/pagenavigation/right_hover.png);
+}
+QPushButton[type="pnprev"]:pressed
+{
+	border-image: url(:/pagenavigation/right_pressed.png);
+}
+QPushButton[type="pnnext"]
+{
+	border-image: url(:/pagenavigation/left.png);
+	qproperty-minimumSize: 24px 24px;
+	qproperty-maximumSize: 24px 24px;
+}
+QPushButton[type="pnnext"]:hover
+{
+	border-image: url(:/pagenavigation/left_hover.png);
+}
+QPushButton[type="pnnext"]:pressed
+{
+	border-image: url(:/pagenavigation/left_pressed.png);
+}
+
+QPushButton[type="guide-right"]
+{
+	border-image: url(:/pagenavigation/arrow_right.png);
+}
+QPushButton[type="guide-right"]:hover
+{
+	border-image: url(:/pagenavigation/arrow_right_hover.png);
+}
+QPushButton[type="guide-right"]:pressed
+{
+	border-image: url(:/pagenavigation/arrow_right_pressed.png);
+}
+
+QPushButton[type="guide-left"]
+{
+	border-image: url(:/pagenavigation/arrow_left.png);
+}
+QPushButton[type="guide-left"]:hover
+{
+	border-image: url(:/pagenavigation/arrow_left_hover.png);
+}
+QPushButton[type="guide-left"]:pressed
+{
+	border-image: url(:/pagenavigation/arrow_left_pressed.png);
+}
+
+QPushButton[type="normal-number"]
+{
+	background:transparent;
+	border-radius: 15px;
+	font-size:12pt;
+	color:#8a8a8a;
+}
+
+QPushButton[type="normal-number"]:hover,QPushButton[type="select-number"]:hover
+{
+	background-color:rgba(30,144,255,0.8);
+	border: 1px solid rgba(30,144,255,0.8);
+}
+
+QPushButton[type="normal-number"]:pressed
+{
+	background:#1E90FF;
+	border-radius: 15px;
+	font-size:12pt;
+	color:#FFFFFF;
+}
+
+QPushButton[type="select-number"]
+{
+	border: 1px solid #1E90FF;
+	border-radius:15px;
+	background: #1E90FF;
+	font-size:12pt;
+	color:#FFFFFF;
+}
+
+QPushButton[type="select-number"]:pressed
+{
+	background:#1E90FF;
+	border-radius: 15px;
+	font-size:12pt;
+	color:#FFFFFF;
+}
+
+QSpinBox[type="page-navigation"]
+{
+	border: 1px solid #CCCCCC;
+	border-radius:4px;
+	font-size:12pt;
+	color:#262626;
+	height:30px;
+	width:40px;
+}
+
+QSpinBox:selected
+{
+	border:1px solid #4691EE;
+	border-radius:4px;
+}

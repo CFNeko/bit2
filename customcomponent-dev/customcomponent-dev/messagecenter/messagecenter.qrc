@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/btn_close.svg</file>
+        <file>image/btn_delete.svg</file>
+        <file>image/ic_point.svg</file>
+        <file>image/ic_warning.svg</file>
+    </qresource>
+</RCC>

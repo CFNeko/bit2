@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>mouse/brush_stroke_circle.png</file>
+        <file>mouse/brush_stroke_rect.png</file>
+    </qresource>
+</RCC>

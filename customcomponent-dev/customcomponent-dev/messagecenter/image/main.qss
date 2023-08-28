@@ -1,0 +1,70 @@
+QWidget[widgettype="main"]{
+	background-color: #E7ECEF;
+}
+QWidget[widgettype="errortitle"]
+{
+	background-color: #EF5B5B;
+}
+QWidget[widgettype="errorbody"]
+{	
+	background-color: #FFFFFF;
+}
+QPushButton[buttontype="close"]
+{
+	background: transparent;
+	border-image: url(:/image/btn_close.svg);
+}
+
+QPushButton[buttontype="delete"]
+{
+	background: transparent;
+	border-image: url(:/image/btn_close.svg);
+}
+
+QLabel[labeltype="pagetitle"]{
+	font-size:14pt;
+	color:#43464B;
+	font-weight:bold;
+}
+
+QLabel[labeltype="errorinfo"]
+{
+	color: #43464B;
+	font-size: 14pt;
+}
+
+QLabel[labeltype="msgtitle"]
+{
+	color: #FFFFFF;
+	font-size: 14pt;
+}
+
+QLabel[labeltype="msgtitleIcon"]
+{
+	background: transparent;
+	border-image: url(:/image/ic_warning.svg);
+}
+
+QLabel[labeltype="notread"]
+{
+	background: transparent;
+	border-image: url(:/image/ic_point.svg);
+}
+
+QLabel[labeltype="haveread"]
+{
+}
+
+QListWidget::item
+{
+	background: transparent;
+    height: 30px;
+    color: #292929;
+    font-size: 11pt;
+    outline: none;
+}
+
+QScrollArea{
+    background:transarent;
+    border:none;
+}

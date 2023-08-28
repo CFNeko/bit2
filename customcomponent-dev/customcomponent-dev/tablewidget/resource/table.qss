@@ -1,0 +1,328 @@
+QLabel[type="tableheader"]
+{
+	font-size: 14px;
+	font-weight: bold;
+    color: #2D3B4E;
+}
+
+QCheckBox
+{
+	border: none;
+}
+
+QCheckBox::indicator
+{
+    width: 18px;
+    height: 18px;
+}
+
+QCheckBox:enabled:checked
+{
+	color: rgb(255, 255, 255);
+}
+
+QCheckBox:enabled:!checked
+{
+	color: rgb(255, 255, 255);
+}
+
+QCheckBox:enabled:hover
+{
+ 	color: rgb(0, 200, 0);
+}
+
+QCheckBox:!enabled
+{
+	color: rgb(80, 80, 80);
+}
+ 
+QCheckBox::indicator:unchecked
+{
+    border-image: url(:/table/checkbox.png);
+}
+
+QCheckBox::indicator:unchecked:hover
+{
+    border-image: url(:/table/checkbox_hover.png);
+}
+
+QCheckBox::indicator:unchecked:pressed {
+    border-image: url(:/table/checkbox_pressed.png);
+}
+
+QCheckBox::indicator:indeterminate
+{
+    border-image: url(:/table/checkbox_part.png);
+}
+
+QCheckBox::indicator:indeterminate:hover
+{
+    border-image: url(:/table/checkbox_part_hover.png);
+}
+
+QCheckBox::indicator:indeterminate:pressed
+{
+    border-image: url(:/table/checkbox_part_pressed.png);
+}
+
+QCheckBox::indicator:checked 
+{
+    width: 18px;
+    height: 18px;
+    border-image: url(:/table/checkbox_checked.png);
+}
+
+QCheckBox::indicator:checked:hover 
+{
+    border-image: url(:/table/checkbox_checked_hover.png);
+}
+
+QCheckBox::indicator:checked:pressed 
+{
+    border-image: url(:/table/checkbox_checked_pressed.png);
+}
+
+QPushButton[type="arrow-up"]
+{
+	border-image: url(:/table/arrow-up.png);
+	qproperty-minimumSize: 15px 15px;
+	qproperty-maximumSize: 15px 15px;
+}
+
+QPushButton[type="arrow-up"]:hover
+{
+	border-image: url(:/table/arrow-up_hover.png);
+}
+
+QPushButton[type="arrow-up"]:pressed
+{
+	border-image: url(:/table/arrow-up_pressed.png);
+}
+
+QPushButton[type="arrow-up"]:checked
+{
+	border-image: url(:/table/arrow-up_checked.png);
+}
+
+QPushButton[type="arrow-down"]
+{
+	border-image: url(:/table/arrow-down.png);
+	qproperty-minimumSize: 15px 15px;
+	qproperty-maximumSize: 15px 15px;
+}
+
+QPushButton[type="arrow-down"]:hover
+{
+	border-image: url(:/table/arrow-down_hover.png);
+}
+
+QPushButton[type="arrow-down"]:pressed
+{
+	border-image: url(:/table/arrow-down_pressed.png);
+}
+
+QPushButton[type="arrow-down"]:checked
+{
+	border-image: url(:/table/arrow-down_checked.png);
+}
+
+QPushButton[type="operate"]
+{
+    font-size: 12px;
+    color: #248DEE;
+    border: 0px;
+}
+
+QPushButton[type="operate"]:hover
+{
+    color: #0659A5;
+}
+
+
+QTableView, QTableWidget
+{
+    font-size: 12px;
+    color: #2D3B4E;
+    border: none;
+    background: #ffffff;
+    gridline-color: #D1D4D9;
+
+}
+
+QTableView::item, QTableWidget::item
+{
+    background: #FFFFFF;
+    border-bottom: 1px solid #D1D4D9;
+    height: 40px;
+}
+
+QTableView::item:alternate, QTableWidget::item:alternate
+{
+    background: #F7F8FA;
+}
+
+QTableView::item:hover, QTableWidget::item:hover
+{
+    background-color: #E9F6FC;
+}
+
+QTableView::item:selected, QTableView::item:alternate:selected, QTableWidget::item:selected, QTableWidget::item:alternate:selected
+{
+    background: #BAE7FF;
+    outline: none;
+    color: #2D3B4E;
+}
+
+QHeaderView::section
+{
+    background: #E4E5EA;
+    border:none;
+    height:60px;
+    font-size: 18px;
+    color: #A5ADBA;
+}
+
+QHeaderView::section:selected
+{
+    outline: 0px;
+}
+
+QScrollBar:vertical
+{
+    height:4px;
+    width:16px;
+    background: #e6e6e7;
+    margin:0px,0px,0px,0px;
+    padding-top:16px;   
+    padding-bottom:16px;
+    border-radius:2px;
+}
+
+QScrollBar:horizontal {
+    height:16px;
+    width:4px;
+    background: #e6e6e7;
+    margin:0px,0px,0px,0px;
+    padding-left:16px;   
+    padding-right:16px;
+    border-radius:2px;
+}
+
+QScrollBar::handle:vertical,QScrollBar::handle:horizontal
+{
+    background-color: #C6C8CD;
+    border-radius:8px;   
+    min-height:60px;
+}
+
+QScrollBar::handle:vertical:hover,QScrollBar::handle:horizontal:hover
+{
+	background:#B0B2B9;
+}
+
+QScrollBar::handle:vertical:pressed,QScrollBar::handle:horizontal:pressed
+{
+    background:#9A9EA6;
+}
+
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical,QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal 
+{
+    background: #e6e6e7;
+    border: 1px solid #e6e6e7;
+}
+
+QScrollBar::add-line:vertical
+{
+    background: none;
+    height: 10px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+ 
+QScrollBar::sub-line:vertical
+{
+    background: none;
+    height: 10px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:horizontal {
+    background: none;
+    width: 10px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal {
+    width: 10px;
+    subcontrol-position: top right;
+    subcontrol-origin: margin;
+    position: absolute;
+    right: 20px;
+}
+
+QScrollBar::down-arrow:vertical
+{
+    height:16px;
+    width:16px;
+    background:#B0B2B9;
+  
+}
+QScrollBar::up-arrow:vertical
+{
+    height:16px;
+    width:16px;
+    background:#B0B2B9;
+    
+}
+QScrollBar::down-arrow:vertical:hover
+{
+   
+}
+QScrollBar::up-arrow:vertical:hover
+{
+
+}
+
+QScrollBar::down-arrow:vertical:pressed 
+{
+
+}
+QScrollBar::up-arrow:vertical:pressed
+{
+
+}
+
+QScrollBar::left-arrow:horizontal
+{
+    height:16px;
+    width:16px;
+    background:#B0B2B9;
+}
+
+QScrollBar::right-arrow:horizontal
+{
+    height:16px;
+    width:16px;
+    background:#B0B2B9;
+}
+
+QScrollBar::left-arrow:horizontal:hover 
+{
+    
+}
+
+QScrollBar::right-arrow:horizontal:hover
+{
+    
+}
+
+QScrollBar::left-arrow:horizontal:pressed
+{
+    
+}
+QScrollBar::right-arrow:horizontal:pressed
+{
+   
+}

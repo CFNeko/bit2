@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TableData</class>
+ <widget class="QWidget" name="TableData">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>476</width>
+    <height>330</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true">QTableView
+{
+	outline: 0px;
+	background:transparent;
+	font-size: 14px;
+    border: none;
+}
+
+QTableView::item
+{
+   background:transparent;
+}
+
+QTableView::item:alternate
+{
+    background: #1F3C70;
+}
+
+QTableView::item:hover
+{
+    /*background-color: #1f2938;*/
+}
+
+QTableView::item:selected, QTableView::item:alternate:selected
+{
+    outline: none;
+}
+
+QHeaderView:section
+{
+    background:#1F3C70;
+    border:none;
+    height:45px;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+QHeaderView::section:selected
+{
+    outline: 0px;
+}</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QTableView" name="tableView">
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

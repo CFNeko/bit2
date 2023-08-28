@@ -1,0 +1,105 @@
+QWidget[widgettype="main"]{
+	background-color:#F4F5F8;
+}
+
+QWidget[widgettype="titlebar"]{
+	background:#132437;
+}
+
+QScrollArea{
+	border: none;
+	background:transparent;
+}
+
+QWidget[widgettype="transparent"]{
+	background: transparent;
+}
+
+QLabel[labeltype="maintitle"]{
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+QLabel[labeltype="widgettitle"]{
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+QPushButton::menu-indicator{ 
+	image:none;
+}
+
+QPushButton[buttontype="mainmenu"]{
+	border-image:url(:/image/ic_bar_menu.png);
+}
+
+QPushButton[buttontype="submenu"]{
+	font-size: 16px;
+	color: #FFFFFF;
+	border-image:url(:/image/bar_unselected.png);
+}
+
+QPushButton[buttontype="submenu"]:hover{
+	border-image:url(:/image/bar_hover.png);
+}
+
+QPushButton[buttontype="submenu"]:checked{
+	border-image:url(:/image/bar_selected.png);
+}
+
+QPushButton[buttontype="prepage"]{
+	border-image:url(:/image/ic_bar_previous_normal.png);
+}
+
+QPushButton[buttontype="prepage"]:hover{
+	border-image:url(:/image/ic_bar_previous_hover.png);
+}
+
+QPushButton[buttontype="prepage"]:pressed{
+	border-image:url(:/image/ic_bar_previous_pressed.png);
+}
+
+QPushButton[buttontype="nextpage"]{
+	border-image:url(:/image/ic_bar_next_normal.png);
+}
+
+QPushButton[buttontype="nextpage"]:hover{
+	border-image:url(:/image/ic_bar_next_hover.png);
+}
+
+QPushButton[buttontype="nextpage"]:pressed{
+	border-image:url(:/image/ic_bar_next_pressed.png);
+}
+
+QPushButton[buttontype="user"]{
+    border-image:url(:/image/ic_bar_user.png);
+}
+
+QMenu{
+	background-color:#132437;
+	color: #FFFFFF;
+	font-size:18px;
+}
+
+QMenu::separator{
+	background-color:#FFFFFF;
+	height:1px;
+}
+
+QMenu::item{
+	width:250px;
+	height:44px;
+	padding-left:8px;
+}
+
+QMenu::item:selected{
+	background-color:rgba(255,255,255,25);
+}
+
+QMenu::item:hover{
+	background-color:rgba(255,255,255,25);
+}
+
+QMenu::item:pressed{
+	background-color:rgba(255,255,255,25);
+}

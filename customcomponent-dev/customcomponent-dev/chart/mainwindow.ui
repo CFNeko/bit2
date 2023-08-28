@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1468</width>
+    <height>830</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="BarChart" name="wdgVer" native="true"/>
+          </item>
+          <item>
+           <widget class="BarChart" name="wdgHori" native="true"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="PieChart" name="wdgPie" native="true"/>
+          </item>
+          <item>
+           <widget class="LineChart" name="wdgLine" native="true"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="TableData" name="wdgTable" native="true"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="BarChart" name="wdgBars" native="true"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>BarChart</class>
+   <extends>QWidget</extends>
+   <header>barchart.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PieChart</class>
+   <extends>QWidget</extends>
+   <header>piechart.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>LineChart</class>
+   <extends>QWidget</extends>
+   <header>linechart.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TableData</class>
+   <extends>QWidget</extends>
+   <header>tabledata.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

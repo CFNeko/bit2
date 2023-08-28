@@ -1,0 +1,11 @@
+QPushButton[buttontype="selecticon"]
+{
+    qproperty-minimumSize: 48px 48px;
+    qproperty-maximumSize: 48px 48px;
+    qproperty-iconSize: 36px 36px;
+}
+
+QWidget[widgettype="transparent"]
+{
+    background:transparent;
+}

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/searchline">
+        <file>search.png</file>
+        <file>search_hover.png</file>
+        <file>search_pressed.png</file>
+        <file>searchline.qss</file>
+    </qresource>
+</RCC>

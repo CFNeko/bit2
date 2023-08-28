@@ -1,0 +1,36 @@
+
+QLineEdit[type="search"]
+{
+	border: 1px solid #CCCCCC;
+	border-radius:4px;
+	font-size:14px;
+	color:#262626;
+	width:280px;
+	height:30px;
+}
+
+QLineEdit[type="search"]:hover
+{
+	border: 1px solid #a1a0a0;
+}
+
+QLineEdit:selected
+{
+	border:1px solid #4691EE;
+	border-radius:4px;
+}
+
+QPushButton[type="search"]
+{
+        border-image: url(:/searchline/search.png);
+	qproperty-minimumSize: 24px 24px;
+	qproperty-maximumSize: 24px 24px;
+}
+QPushButton[type="search"]:hover
+{
+        border-image: url(:/searchline/search_hover.png);
+}
+QPushButton[type="search"]:pressed
+{
+	border-image: url(:/searchline/search_pressed.png);
+}

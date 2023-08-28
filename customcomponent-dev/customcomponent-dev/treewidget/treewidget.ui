@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TreeWidget</class>
+ <widget class="QWidget" name="TreeWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>376</width>
+    <height>495</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TreeWidget</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTreeWidget" name="tree">
+     <column>
+      <property name="text">
+       <string notr="true">1</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>tree</sender>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>TreeWidget</receiver>
+   <slot>slot_treeItemChanged(QTreeWidgetItem*,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>210</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>132</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slot_treeItemChanged(QTreeWidgetItem*,int)</slot>
+ </slots>
+</ui>
