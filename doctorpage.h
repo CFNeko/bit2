@@ -1,5 +1,5 @@
-#ifndef HOMEPAGE_H
-#define HOMEPAGE_H
+#ifndef DOCTORPAGE_H
+#define DOCTORPAGE_H
 
 #include <QWidget>
 #include <QMouseEvent>
@@ -7,20 +7,25 @@
 #include<QLineEdit>
 #include<QComboBox>
 #include<QTextEdit>
-#include"prescriptioninquiry.h"
-#include "healthevaluation.h"
+#include<QTextEdit>
+#include<QDebug>
+#include<QPainter>
+#include "recorditemtable.h"
+#include "prescriptiontable.h"
+#include "recorditemhistoryofdoctor.h"
+#include "registraitondoctorpage.h"
 
 namespace Ui {
-class HomePage;
+class DoctorPage;
 }
 
-class HomePage : public QWidget
+class DoctorPage : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit HomePage(QWidget *parent = nullptr);
-    ~HomePage();
+    explicit DoctorPage(QWidget *parent = nullptr);
+    ~DoctorPage();
     void addCustomWidget();
     //左侧部分的代码
         QLabel *UserNameLabel;
@@ -51,22 +56,10 @@ public:
         QHBoxLayout *BtnLayout;
 
         void paintEvent(QPaintEvent *);
-
-
-
-private slots:
-        void on_prescription_inquiry_clicked();
-        void on_PreToHome_Received();
-
-        void on_pushButton_modify_clicked();
-
-        void on_pushButton_submit_clicked();
-
 private:
-    Ui::HomePage *ui;
+    Ui::DoctorPage *ui;
     ListTemplate* m_pListTemplate;
-     PrescriptionInquiry* prescription_inquiry;
 
 };
 
-#endif // HOMEPAGE_H
+#endif // DOCTORPAGE_H
