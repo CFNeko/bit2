@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>HomePage</class>
- <widget class="QWidget" name="HomePage">
+ <class>DoctorPage</class>
+ <widget class="QWidget" name="DoctorPage">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>768</width>
+    <width>742</width>
     <height>498</height>
    </rect>
   </property>
@@ -27,7 +27,7 @@
       <enum>QTabWidget::South</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="HOME">
       <attribute name="title">
@@ -50,7 +50,7 @@
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QPushButton" name="booking">
+         <widget class="QPushButton" name="registration_inquiry">
           <property name="styleSheet">
            <string notr="true">border-radius: 50px;
     background: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 #0099FF, stop:1 #0044CC);
@@ -58,12 +58,12 @@
     font-family: &quot;楷体&quot;;</string>
           </property>
           <property name="text">
-           <string>预约挂号</string>
+           <string>处理挂号</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="prescription_inquiry">
+         <widget class="QPushButton" name="registration_history">
           <property name="styleSheet">
            <string notr="true">border-radius: 50px;
     background: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 #0099FF, stop:1 #0044CC);
@@ -71,33 +71,7 @@
     font-family: &quot;楷体&quot;;</string>
           </property>
           <property name="text">
-           <string>处方查询</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="medica_record">
-          <property name="styleSheet">
-           <string notr="true">border-radius: 50px;
-    background: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 #0099FF, stop:1 #0044CC);
-    color: white;
-    font-family: &quot;楷体&quot;;</string>
-          </property>
-          <property name="text">
-           <string>电子病例</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="health_evaluate">
-          <property name="styleSheet">
-           <string notr="true">border-radius: 50px;
-    background: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 #0099FF, stop:1 #0044CC);
-    color: white;
-    font-family: &quot;楷体&quot;;</string>
-          </property>
-          <property name="text">
-           <string>健康评估</string>
+           <string>查询记录</string>
           </property>
          </widget>
         </item>
@@ -123,9 +97,9 @@
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="Message">
+     <widget class="QWidget" name="Massage">
       <attribute name="title">
-       <string>Message</string>
+       <string>Massage</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
@@ -161,7 +135,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>712</width>
+            <width>686</width>
             <height>355</height>
            </rect>
           </property>
@@ -198,6 +172,42 @@
               <widget class="QLabel" name="label_17">
                <property name="text">
                 <string>就诊号：１２３４５６７</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_7">
+               <property name="maximumSize">
+                <size>
+                 <width>224</width>
+                 <height>37</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+background-color: #F0F0F0;
+                        border: 2px solid #C0C0C0;
+                        padding: 5px;
+                        
+</string>
+               </property>
+               <property name="text">
+                <string>修改资料</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_8">
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+background-color: #F0F0F0;
+                        border: 2px solid #C0C0C0;
+                        padding: 5px;
+                        
+</string>
+               </property>
+               <property name="text">
+                <string>提交</string>
                </property>
               </widget>
              </item>
@@ -244,32 +254,32 @@
                <item>
                 <widget class="QLabel" name="label_12">
                  <property name="text">
-                  <string>电话号码</string>
+                  <string>telephone</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="boxTelephone"/>
+                <widget class="QLineEdit" name="lineEdit_10"/>
                </item>
                <item>
                 <widget class="QLabel" name="label_13">
                  <property name="text">
-                  <string>地址</string>
+                  <string>address</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="boxAddress"/>
+                <widget class="QLineEdit" name="lineEdit_11"/>
                </item>
                <item>
                 <widget class="QLabel" name="label_14">
                  <property name="text">
-                  <string>电子邮件</string>
+                  <string>emali</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="boxEmail"/>
+                <widget class="QLineEdit" name="lineEdit_12"/>
                </item>
                <item>
                 <widget class="QLabel" name="label_15">
@@ -324,7 +334,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="boxName"/>
+                <widget class="QLineEdit" name="lineEdit_2"/>
                </item>
                <item>
                 <widget class="QLabel" name="label_8">
@@ -334,7 +344,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="boxAge"/>
+                <widget class="QLineEdit" name="lineEdit_9"/>
                </item>
                <item>
                 <widget class="QLabel" name="label_9">
@@ -344,44 +354,27 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="boxID"/>
+                <widget class="QLineEdit" name="lineEdit_6"/>
                </item>
                <item>
-                <widget class="QLabel" name="label_2">
+                <widget class="QLabel" name="label_10">
                  <property name="text">
-                  <string/>
+                  <string>修改密码：</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton_7">
-                 <property name="styleSheet">
-                  <string notr="true">border-radius: 10px;
-background-color: #F0F0F0;
-                        border: 2px solid #C0C0C0;
-                        padding: 5px;
-                        
-</string>
-                 </property>
+                <widget class="QLineEdit" name="lineEdit_7"/>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_11">
                  <property name="text">
-                  <string>修改资料</string>
+                  <string>确认密码：</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton_8">
-                 <property name="styleSheet">
-                  <string notr="true">border-radius: 10px;
-background-color: #F0F0F0;
-                        border: 2px solid #C0C0C0;
-                        padding: 5px;
-                        
-</string>
-                 </property>
-                 <property name="text">
-                  <string>提交</string>
-                 </property>
-                </widget>
+                <widget class="QLineEdit" name="lineEdit_8"/>
                </item>
               </layout>
              </widget>

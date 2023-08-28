@@ -9,6 +9,20 @@
 #include <QtDebug>
 #include <QtSql>
 #include <QFileInfo>
+#include<QPainter>
+#include<QWidget>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QMessageBox>
+#include <QVBoxLayout>
+#include <QMainWindow>
+#include<QFormLayout>
+#include<QRadioButton>
+#include <QDebug>
+#include <QSqlQuery>
+#include<QButtonGroup>
+#include "doctorpage.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class RegisterWeb; }
@@ -23,6 +37,7 @@ public:
     ~RegisterWeb();
     void paintEvent(QPaintEvent*);
      HomePage* homePage;
+     DoctorPage *doctorpage;
      SignUp* signUp;
 
 public slots:
@@ -33,7 +48,7 @@ public slots:
 
 private:
     Ui::RegisterWeb *ui; 
-
+    bool choice = false;
     QMessageBox* messageBox;
      QSqlDatabase myDB;
      void login();

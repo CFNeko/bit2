@@ -4,23 +4,15 @@
 #include<QTextEdit>
 #include<QDebug>
 #include<QPainter>
-#include<QButtonGroup>
+#include <QSqlQuery>
+
+#define Path_to_DB "/home/user/Desktop/bit/database.db"
 
 HomePage::HomePage(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::HomePage)
 {
     ui->setupUi(this);
-    ui->lineEdit->setReadOnly(true);
-    ui->lineEdit_2->setReadOnly(true);
-    ui->lineEdit_3->setReadOnly(true);
-    ui->lineEdit_4->setReadOnly(true);
-    ui->lineEdit_5->setReadOnly(true);
-    ui->lineEdit_6->setReadOnly(true);
-    ui->lineEdit_7->setReadOnly(true);
-    ui->lineEdit_8->setReadOnly(true);
-    connect(ui->pushButton_modify,&QPushButton::clicked,this,&HomePage::on_pushButton_modify_clicked);
-    connect(ui->pushButton_submit,&QPushButton::clicked,this,&HomePage::on_pushButton_submit_clicked);
     ui->Homepge->setStyleSheet(
                                    "QTabWidget::pane{ border:none; }"
                                    "QTabWidget::tab-bar{ alignment:left; }"
@@ -35,12 +27,29 @@ HomePage::HomePage(QWidget *parent) :
     ui->prescription_inquiry->setFixedSize(100,100);
     ui->medica_record->setFixedSize(100,100);
     ui->health_evaluate->setFixedSize(100,100);
-    prescription_inquiry = new PrescriptionInquiry;
     QVBoxLayout* layout = new QVBoxLayout(ui->scrollAreaWidgetContents); // 创建垂直布局
        layout->setSpacing(10); // 设置布局的间距
 
-      //connect(ui->updatePushbutton, &QPushButton::clicked, this, &HomePage::addCustomWidget); // 点击 "Update" 按钮时添加自定义界面
-       connect(ui->prescription_inquiry, &QPushButton::clicked, this, &HomePage::on_prescription_inquiry_clicked);
+      //Erick DB
+      myDBChangeInfo = QSqlDatabase::addDatabase("QSQLITE", "Change info");
+      myDBChangeInfo.setDatabaseName(Path_to_DB);
+      QString deleteLater = "23";
+      QString temp = "select phone, address, email, name, age, idcard FROM patient WHERE pno='" + deleteLater + "'";
+      qDebug() << temp;
+      myDBChangeInfo.open();
+      QSqlQuery q;
+      q.exec(temp);
+      qDebug() << q.value(0).toString();
+      ui->boxTelephone->setText(q.value(0).toString());
+      ui->boxAddress->setText(q.value(1).toString());
+      ui->boxEmail->setText(q.value(2).toString());
+      ui->boxName->setText(q.value(3).toString());
+      ui->boxAge->setText(q.value(4).toString());
+      ui->boxID->setText(q.value(5).toString());
+
+
+      connect(ui->updatePushbutton, &QPushButton::clicked, this, &HomePage::addCustomWidget); // 点击 "Update" 按钮时添加自定义界面
+      connect(ui->prescription_inquiry, &QPushButton::clicked, this, &HomePage::on_prescription_inquiry_clicked);
       setWindowTitle("患者端主页");
 
       // 创建水平布局管理器
@@ -63,56 +72,8 @@ HomePage::HomePage(QWidget *parent) :
 
       ui->frame_5->setLayout(mainlayout);
       //实现从处方查询那个界面，跳回到首页
-       connect(prescription_inquiry, SIGNAL(preToHome()), this, SLOT(on_PreToHome_Received()) );
+//       connect(prescription_inquiry, SIGNAL(preToHome()), this, SLOT(on_PreToHome_Received()) );
 
-       //gerenziliao
-
-       //shezhitouxiang
-       QPixmap pixmap(":/resource111/patient_avatar.jpg");
-       QPixmap scaledPixmap = pixmap.scaled(QSize(ui->avatar_patient->width(), ui->avatar_patient->height()), Qt::KeepAspectRatio);
-       ui->avatar_patient->setPixmap(scaledPixmap);
-       ui->avatar_patient->setScaledContents(true);
-       ui->avatar_patient->setStyleSheet("QLabel {"
-                                         "border-radius: 100px;"  // 设置圆角半径为宽度的一半
-                                         "border: 2px solid transparent;"  // 设置边框样式为透明
-                                         "}");
-       QButtonGroup* group = new QButtonGroup(ui->My);
-       group->addButton(ui->pushButton_modify);
-       group->addButton(ui->pushButton_submit);
-       group->setExclusive(true);
-
-       ui->pushButton_submit->setStyleSheet("QPushButton {"
-                                            "background-color: white;"  // 设置默认背景色为白色
-                                            "border: none;"  // 移除边框
-                                            "border-radius: 5px;"  // 设置圆角
-                                            "padding: 5px;"  // 设置内边距
-                                            "}"
-                                            "QPushButton:hover {"
-                                            "background-color: #eaeaea;"  // 设置悬停时的背景色为浅灰色
-                                            "}"
-                                            "QPushButton:pressed {"
-                                            "background-color: #c0c0c0;"  // 设置按下时的背景色为稍深灰色
-                                            "border-style: inset;"  // 添加下沉效果
-                                            "}"
-                                            "QPushButton:released {"
-                                            "border-style: none;"  // 恢复无边框样式
-                                            "}");
-       ui->pushButton_modify->setStyleSheet("QPushButton {"
-                                                  "background-color: white;"  // 设置默认背景色为白色
-                                                  "border: none;"  // 移除边框
-                                                  "border-radius: 5px;"  // 设置圆角
-                                                  "padding: 5px;"  // 设置内边距
-                                                  "}"
-                                                  "QPushButton:hover {"
-                                                  "background-color: #eaeaea;"  // 设置悬停时的背景色为浅灰色
-                                                  "}"
-                                                  "QPushButton:pressed {"
-                                                  "background-color: #c0c0c0;"  // 设置按下时的背景色为稍深灰色
-                                                  "border-style: inset;"  // 添加下沉效果
-                                                  "}"
-                                                  "QPushButton:released {"
-                                                  "border-style: none;"  // 恢复无边框样式
-                                                  "}");
 }
 
 HomePage::~HomePage()
@@ -127,10 +88,6 @@ void HomePage::paintEvent(QPaintEvent*)
     QPixmap pixmap1;
     pixmap1.load(":/resource111/background.jpg");
     painter1.drawPixmap(0,0,this->width(),this->height(),pixmap1);
-
-
-
-
 }
 
 
@@ -152,32 +109,12 @@ void HomePage::on_prescription_inquiry_clicked()
 {
 
     this->hide();
-    prescription_inquiry->show();
+//    prescription_inquiry->show();
 }
 
 void HomePage::on_PreToHome_Received()
 {
     this->show();
-    prescription_inquiry->close();
+//    prescription_inquiry->close();
 
-}
-
-void HomePage::on_pushButton_modify_clicked()
-{
-    ui->lineEdit->setReadOnly(false);
-    ui->lineEdit_6->setReadOnly(false);
-    ui->lineEdit_7->setReadOnly(false);
-    ui->lineEdit_8->setReadOnly(false);
-}
-
-void HomePage::on_pushButton_submit_clicked()
-{
-    ui->lineEdit->setReadOnly(true);
-    ui->lineEdit_2->setReadOnly(true);
-    ui->lineEdit_3->setReadOnly(true);
-    ui->lineEdit_4->setReadOnly(true);
-    ui->lineEdit_5->setReadOnly(true);
-    ui->lineEdit_6->setReadOnly(true);
-    ui->lineEdit_7->setReadOnly(true);
-    ui->lineEdit_8->setReadOnly(true);
 }
