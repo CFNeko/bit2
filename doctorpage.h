@@ -7,13 +7,21 @@
 #include<QLineEdit>
 #include<QComboBox>
 #include<QTextEdit>
-#include<QTextEdit>
 #include<QDebug>
 #include<QPainter>
 #include "recorditemtable.h"
 #include "prescriptiontable.h"
 #include "recorditemhistoryofdoctor.h"
 #include "registraitondoctorpage.h"
+
+#include "dbwidget.h"
+
+#include <QTcpSocket>
+#include <QTimer>
+#include <QDateTime>
+#include <QHostAddress>
+
+#include <QMediaPlayer>
 
 namespace Ui {
 class DoctorPage;
@@ -60,6 +68,24 @@ private:
     Ui::DoctorPage *ui;
     ListTemplate* m_pListTemplate;
 
+
+    QTcpSocket *tcpSocket;
+
+    int pno;
+    int dno;
+    QString author;
+
+    QMediaPlayer* player;
+
+    bool imageMode;
+    QByteArray *imgData;
+    QStringList imgHead;
+
+    QList<QPushButton*> *myButtonList;
+    QList<int> *myList;
+
+private slots:
+    void on_tcpSocket_readyRead();
 };
 
 #endif // DOCTORPAGE_H

@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/chat">
+        <file>msg.wav</file>
+        <file>my_pic.jpg</file>
+        <file>my_pic2.jpg</file>
+        <file>SendImage.jpg</file>
+        <file>testuser_pic.jpg</file>
+        <file>壁纸艾斯.png</file>
+    </qresource>
+    <qresource prefix="/doctor"/>
+    <qresource prefix="/">
+        <file>doctor_pic.jpg</file>
+    </qresource>
+</RCC>

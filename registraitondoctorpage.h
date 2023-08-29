@@ -28,11 +28,19 @@ class RegistraitonDoctorPage : public QWidget
 public:
     explicit RegistraitonDoctorPage(QWidget *parent = nullptr, bool judge = false);
     ~RegistraitonDoctorPage();
-    void paintEvent(QPaintEvent*);
+    void paintEvent(QPaintEvent*) override;
 
 private:
     Ui::RegistraitonDoctorPage *ui;
     bool isHistory;
+
+signals:
+    void rClosed();
+protected:
+    void closeEvent(QCloseEvent *event) override {
+        emit rClosed();
+        QWidget::closeEvent(event);
+    }
 };
 
 #endif // REGISTRAITONDOCTORPAGE_H

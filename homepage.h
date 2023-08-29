@@ -9,6 +9,18 @@
 #include<QTextEdit>
 #include"prescriptioninquiry.h"
 #include "healthevaluation.h"
+#include "mainwidget.h"
+#include "prescriptioninquiry.h"
+#include "recorditeminquiry.h"
+
+
+#include "dbwidget.h"
+#include <QTcpSocket>
+#include <QTimer>
+#include <QDateTime>
+#include <QHostAddress>
+#include <QMediaPlayer>
+#include <QList>
 
 namespace Ui {
 class HomePage;
@@ -23,49 +35,77 @@ public:
     ~HomePage();
     void addCustomWidget();
     //左侧部分的代码
-        QLabel *UserNameLabel;
-        QLabel *NameLabel;
-        QLabel *SexLabel;
-        QLabel *DepartmentLabel;
-        QLabel *AgeLabel;
-        QLabel *OtherLabel;
-        QLineEdit *UserNameLineEdit;
-        QLineEdit *NameLineEdit;
-        QComboBox *SexComBox;
-        QLineEdit *DepartmentEdit;
-        QLineEdit *AgeEdit;
-        QGridLayout *LeftLayout;
-        //右侧部分的代码
-        QLabel *HeadLabel;
-        QLabel *HeadIconLabel;
-        QPushButton *UpdateHeadButn;
-        QHBoxLayout *TopRightLayout;
-        QLabel *IntroductionLabel;
-        QTextEdit *IntroductionText;
-        QVBoxLayout *RightLayout;
+    QLabel *UserNameLabel;
+    QLabel *NameLabel;
+    QLabel *SexLabel;
+    QLabel *DepartmentLabel;
+    QLabel *AgeLabel;
+    QLabel *OtherLabel;
+    QLineEdit *UserNameLineEdit;
+    QLineEdit *NameLineEdit;
+    QComboBox *SexComBox;
+    QLineEdit *DepartmentEdit;
+    QLineEdit *AgeEdit;
+    QGridLayout *LeftLayout;
+    //右侧部分的代码
+    QLabel *HeadLabel;
+    QLabel *HeadIconLabel;
+    QPushButton *UpdateHeadButn;
+    QHBoxLayout *TopRightLayout;
+    QLabel *IntroductionLabel;
+    QTextEdit *IntroductionText;
+    QVBoxLayout *RightLayout;
 
 
-        //底部部分
-        QPushButton *OKBtn;
-        QPushButton *CancelBtn;
-        QHBoxLayout *BtnLayout;
+    //底部部分
+    QPushButton *OKBtn;
+    QPushButton *CancelBtn;
+    QHBoxLayout *BtnLayout;
 
-        void paintEvent(QPaintEvent *);
+    void paintEvent(QPaintEvent *);
+
+
+    //在线问诊
+    QTcpSocket *tcpSocket;
+
+    int pno;
+    int dno;
+    QString author;
+
+    QMediaPlayer* player;
+
+    bool imageMode;
+    QByteArray *imgData;
+    QStringList imgHead;
+
+
 
 
 
 private slots:
-        void on_prescription_inquiry_clicked();
-        void on_PreToHome_Received();
+    void on_prescription_inquiry_clicked();
+    void on_PreToHome_Received();
 
-        void on_pushButton_modify_clicked();
+    void on_pushButton_modify_clicked();
 
-        void on_pushButton_submit_clicked();
+    void on_pushButton_submit_clicked();
+public slots:
+    void onClosed() {
+        this->show();
+    }
 
 private:
     Ui::HomePage *ui;
     ListTemplate* m_pListTemplate;
-     PrescriptionInquiry* prescription_inquiry;
+    PrescriptionInquiry* prescription_inquiry;
+
+
+    QList<QPushButton*> *myButtonList;
+    QList<int> *myList;
+
+
+private slots:
+    void on_tcpSocket_readyRead();
 
 };
 

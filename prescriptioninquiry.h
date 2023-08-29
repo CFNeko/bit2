@@ -8,6 +8,8 @@
 #include <QVBoxLayout>
 #include <QResizeEvent>
 
+#include "prescriptionpatient.h"
+
 namespace Ui {
 class PrescriptionInquiry;
 }
@@ -30,6 +32,7 @@ private:
     Ui::PrescriptionInquiry *ui;
 signals:
     void preToHome();
+
 };
 
 class ScrollAreaEventFilter : public QObject
@@ -66,7 +69,10 @@ private:
         scrollArea->setHorizontalScrollBarPolicy(showHorizontalScrollBar ? Qt::ScrollBarAsNeeded : Qt::ScrollBarAlwaysOff);
     }
 
+
     QScrollArea* scrollArea;
     QVBoxLayout* layout;
+
+
 };
 #endif // PRESCRIPTIONINQUIRY_H
