@@ -30,6 +30,13 @@ private:
     double weight = 87;
     double height_ = 1.95;
     int OScore;
+signals:
+    void hClosed();
+protected:
+    void closeEvent(QCloseEvent *event) override {
+        emit hClosed();
+        QWidget::closeEvent(event);
+    }
 };
 
 #endif // HEALTHEVALUATION_H

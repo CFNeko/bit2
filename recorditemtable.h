@@ -20,6 +20,14 @@ public:
 
 private:
     Ui::RecordItemTable *ui;
+
+signals:
+    void riClosed();
+protected:
+    void closeEvent(QCloseEvent *event) override {
+        emit riClosed();
+        QWidget::closeEvent(event);
+    }
 };
 
 #endif // RECORDITEMTABLE_H

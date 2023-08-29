@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui sql network multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -21,28 +21,50 @@ SOURCES += \
     healthevaluation.cpp \
     homepage.cpp \
     main.cpp \
+    mainwidget.cpp \
     navigationdesign.cpp \
     prescriptioninquiry.cpp \
+    prescriptionpatient.cpp \
     prescriptiontable.cpp \
+    qmybutton.cpp \
+    qmylabel.cpp \
+    qmywidget.cpp \
+    recorditeminquiry.cpp \
+    recorditempatient.cpp \
     recorditemtable.cpp \
     registerweb.cpp \
     registraitondoctorpage.cpp \
     signup.cpp \
-    userfriendlyitems.cpp
+    userfriendlyitems.cpp \
+    dbwidget.cpp \
+    entereventfilter.cpp \
+    message.cpp \
+    patientchatwidget.cpp
 
 HEADERS += \
     booking.h \
     doctorpage.h \
     healthevaluation.h \
     homepage.h \
+    mainwidget.h \
     navigationdesign.h \
     prescriptioninquiry.h \
+    prescriptionpatient.h \
     prescriptiontable.h \
+    qmybutton.h \
+    qmylabel.h \
+    qmywidget.h \
+    recorditeminquiry.h \
+    recorditempatient.h \
     recorditemtable.h \
     registerweb.h \
     registraitondoctorpage.h \
     signup.h \
-    userfriendlyitems.h
+    userfriendlyitems.h \
+    dbwidget.h \
+    entereventfilter.h \
+    message.h \
+    patientchatwidget.h
 
 FORMS += \
     booking.ui \
@@ -50,15 +72,22 @@ FORMS += \
     healthevaluation.ui \
     homepage.ui \
     listtemplate.ui \
+    mainwidget.ui \
     msgitem.ui \
     navigationdesign.ui \
     prescriptioninquiry.ui \
+    prescriptionpatient.ui \
     prescriptiontable.ui \
+    recorditeminquiry.ui \
+    recorditempatient.ui \
     recorditemtable.ui \
     registerweb.ui \
     registraitondoctorpage.ui \
     signup.ui \
-    userfriendlyitems.ui
+    userfriendlyitems.ui \
+    dbwidget.ui \
+    message.ui \
+    patientchatwidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -67,6 +96,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     customcomponent-dev/customcomponent-dev/listwidget/listwidget.qrc \
+    myresource/chatResourse.qrc \
     resources.qrc
 
 DISTFILES += \

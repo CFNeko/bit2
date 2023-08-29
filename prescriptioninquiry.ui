@@ -139,7 +139,7 @@ p, li { white-space: pre-wrap; }
             <item>
              <widget class="QPushButton" name="inquirepushbutton">
               <property name="text">
-               <string>查询历史处方</string>
+               <string>查询历史病历</string>
               </property>
              </widget>
             </item>
