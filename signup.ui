@@ -118,6 +118,16 @@
          <widget class="QLineEdit" name="boxUsername"/>
         </item>
         <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>电话号码</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="boxPhone"/>
+        </item>
+        <item>
          <widget class="QLabel" name="label_7">
           <property name="text">
            <string>年龄：</string>

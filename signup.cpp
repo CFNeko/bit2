@@ -7,7 +7,7 @@
 #include<QFileInfo>
 #include <QString>
 
-#define Path_to_DB "/home/user/Qtworks/mainWindow/2/database.db"
+#define Path_to_DB "/home/user/Desktop/bit2/database.db"
 
 
 SignUp::SignUp(QWidget *parent) :
@@ -34,6 +34,7 @@ SignUp::SignUp(QWidget *parent) :
        QFileInfo checkFile(Path_to_DB);
        QString username = ui->boxUsername->text();
        QString gender = ui->boxGender->currentText();
+       QString phone = ui->boxPhone->text();
        QString id = ui->boxID->text();
        QString password = ui->boxPassword->text();
        QString password_2 = ui->boxPassword2->text();
@@ -42,7 +43,7 @@ SignUp::SignUp(QWidget *parent) :
           return;
 
        }
-       QString temp = "INSERT INTO patient (name, gender, idcard, password) VALUES('" + username + "', '" + gender + "', '" + id + "', '" + password + "')" ;
+       QString temp = "INSERT INTO patient (pname, sex, idnumber, phonenumber, passwd) VALUES('" + username + "', '" + gender + "', '" + id + "', '" + phone + "', '" + password + "')" ;
        qDebug() << temp;
        myDBregister.open();
        QSqlQuery q;
@@ -54,6 +55,7 @@ SignUp::SignUp(QWidget *parent) :
        //初始化掉注册界面
        ui->boxUsername->setText("");
        ui->boxGender->setCurrentIndex(0);
+       ui->boxPhone->setText("");
        ui->boxID->setText("");
        ui->boxPassword->setText("");
        ui->boxPassword2->setText("");

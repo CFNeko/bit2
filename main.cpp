@@ -6,11 +6,11 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-//    RegisterWeb w;
-//    w.show();
-    HomePage w;
+    RegisterWeb w;
     w.show();
-    DoctorPage *d = new DoctorPage;
-    d->show();
+    //HomePage w;
+    //w.show();
+    //DoctorPage *d = new DoctorPage;
+    //d->show();
     return a.exec();
 }

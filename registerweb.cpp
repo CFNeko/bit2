@@ -15,7 +15,7 @@
 #include<QButtonGroup>
 #include "doctorpage.h"
 
-#define Path_to_DB "/home/user/database.db"
+#define Path_to_DB "/home/user/Desktop/bit2/database.db"
 
 RegisterWeb::RegisterWeb(QWidget *parent)
     : QMainWindow(parent)
@@ -102,7 +102,7 @@ RegisterWeb::RegisterWeb(QWidget *parent)
 
         QString str = usernameLineEdit->text();
         QString password = passwordLineEdit->text();
-        QString temp = "SELECT * FROM patient WHERE name= '" + str + "' and password='" + password + "'";
+        QString temp = "SELECT * FROM patient WHERE pname= '" + str + "' and passwd='" + password + "'";
         myDB.open();
         QSqlQuery q;
         QString data = "";
