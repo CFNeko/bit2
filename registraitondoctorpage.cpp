@@ -112,6 +112,8 @@ RegistraitonDoctorPage ::RegistraitonDoctorPage(QWidget *parent, bool judge) :
                     {
                         RecordItemTable *r = new RecordItemTable;
                         r->show();
+                        this->hide();
+                        connect(r, &RecordItemTable::riClosed, this, &QWidget::show);
                     });
 
                     columnlayout->addWidget(content);
@@ -154,7 +156,6 @@ RegistraitonDoctorPage ::RegistraitonDoctorPage(QWidget *parent, bool judge) :
     //        d->show();
     //    });
     this->setLayout(pagelayout);
-
 
 }
 

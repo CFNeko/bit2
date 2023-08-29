@@ -50,6 +50,10 @@ HealthEvaluation::HealthEvaluation(QWidget *parent) :
         }
     });
 
+
+//    发送关闭信号
+    connect(this, &HealthEvaluation::destroyed, this, &HealthEvaluation::hClosed);
+
 }
 
 HealthEvaluation::~HealthEvaluation()
@@ -172,8 +176,8 @@ void HealthEvaluation::CalculateTotalScore(int OScore, double BMI, int strechSco
     return;
 }
 
-    void HealthEvaluation::paintEvent(QPaintEvent *) {
-        QPainter painter(this);
-        QPixmap background(":/resource111/evaluation.png");  // 替换为你的图片路径
-        painter.drawPixmap(0, 0, width(), height(), background);
-    }
+void HealthEvaluation::paintEvent(QPaintEvent *) {
+    QPainter painter(this);
+    QPixmap background(":/resource111/evaluation.png");  // 替换为你的图片路径
+    painter.drawPixmap(0, 0, width(), height(), background);
+}

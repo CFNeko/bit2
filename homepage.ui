@@ -157,14 +157,28 @@
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_7">
               <item>
-               <layout class="QVBoxLayout" name="verticalLayout" stretch="3,30">
-                <item>
-                 <widget class="QWidget" name="widget_7" native="true">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 255);</string>
-                  </property>
-                 </widget>
-                </item>
+               <widget class="QLabel" name="labelName">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>尚未选择聊天对象</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout" stretch="30">
                 <item>
                  <widget class="QScrollArea" name="scrollArea">
                   <property name="styleSheet">
@@ -179,9 +193,16 @@
                      <x>0</x>
                      <y>0</y>
                      <width>142</width>
-                     <height>321</height>
+                     <height>323</height>
                     </rect>
                    </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_15">
+                    <item>
+                     <widget class="QWidget" name="msgWidget" native="true">
+                      <layout class="QVBoxLayout" name="verticalLayout_10"/>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </widget>
                 </item>
@@ -191,7 +212,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QWidget" name="widget_2" native="true">
+            <widget class="dbWidget" name="mainChat" native="true">
              <property name="styleSheet">
               <string notr="true">alternate-background-color: rgb(211, 215, 207);</string>
              </property>
@@ -601,6 +622,14 @@ font: 57 14pt &quot;Ubuntu&quot;;</string>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>dbWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">dbwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="resources.qrc"/>
  </resources>
