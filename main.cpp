@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     w.show();
     //HomePage w;
     //w.show();
-    //DoctorPage *d = new DoctorPage;
-    //d->show();
+    DoctorPage *d = new DoctorPage;
+    d->show();
     return a.exec();
 }

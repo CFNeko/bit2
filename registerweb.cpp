@@ -24,6 +24,7 @@ RegisterWeb::RegisterWeb(QWidget *parent)
     ui->setupUi(this);
     homePage = new HomePage();
     signUp = new SignUp();
+    doctorPage = new DoctorPage();
     //db
     myDB = QSqlDatabase::addDatabase("QSQLITE");
     myDB.setDatabaseName(Path_to_DB);
@@ -89,38 +90,7 @@ RegisterWeb::RegisterWeb(QWidget *parent)
 
 
 
-    connect(registerButton, &QPushButton::clicked,
-            [=](){
 
-        this->close();
-        signUp->show();
-    });
-
-    //           connect(loginButton, &QPushButton::clicked, this, &RegisterWeb::login);
-    connect(loginButton, &QPushButton::clicked,
-            [=](){
-
-        QString str = usernameLineEdit->text();
-        QString password = passwordLineEdit->text();
-        QString temp = "SELECT * FROM patient WHERE pname= '" + str + "' and passwd='" + password + "'";
-        myDB.open();
-        QSqlQuery q;
-        QString data = "";
-        q.exec(temp);
-        while (q.next()) {
-            data += q.value(0).toString() + q.value(1).toString();
-        }
-        if (data > 0) {
-
-            this->hide();
-            homePage->show();
-        }
-        else {
-            //Jenny 请假一个错误widget
-            passwordLineEdit->setText("");
-            showMessageBox();
-        }
-    });
     QHBoxLayout* horizontalLayout = new QHBoxLayout; // 创建水平布局
     horizontalLayout->addWidget(registerButton); // 将按键1添加到水平布局
     horizontalLayout->addWidget(loginButton); // 将按键2添加到水平布局
@@ -200,8 +170,71 @@ RegisterWeb::RegisterWeb(QWidget *parent)
     pushButton_patient->move(100,400);
     pushButton_doctor->move(300,400);
 
+    pushButton_patient->setChecked(true);
+
     connect(signUp, SIGNAL(signalToMain()), this, SLOT(on_exit_Signal_Received()) );
     connect(signUp, SIGNAL(signalTologin()), this, SLOT(on_exit_Signal_Received()) );
+    connect(registerButton, &QPushButton::clicked,
+            [=](){
+
+        this->close();
+        signUp->show();
+    });
+
+    //           connect(loginButton, &QPushButton::clicked, this, &RegisterWeb::login);
+    connect(loginButton, &QPushButton::clicked,
+            [=](){
+
+        QString str = usernameLineEdit->text();
+        QString password = passwordLineEdit->text();
+        QString temp;
+        if (pushButton_doctor->isChecked()) {
+            temp = "SELECT * FROM doctor WHERE dname= '" + str + "' and passwd='" + password + "'";
+            myDB.open();
+            QSqlQuery q;
+            QString data = "";
+            q.exec(temp);
+            while (q.next()) {
+                data += q.value(0).toString() + q.value(1).toString();
+            }
+            if (data > 0) {
+
+                this->hide();
+                doctorPage->show();
+            }
+            else {
+                //Jenny 请假一个错误widget
+                passwordLineEdit->setText("");
+                showMessageBox();
+            }
+        }
+        else if (pushButton_patient->isChecked())  {
+            temp = "SELECT * FROM patient WHERE pname= '" + str + "' and passwd='" + password + "'";
+            myDB.open();
+            QSqlQuery q;
+            QString data = "";
+            q.exec(temp);
+            while (q.next()) {
+                data += q.value(0).toString() + q.value(1).toString();
+            }
+            if (data > 0) {
+
+                this->hide();
+                homePage->show();
+            }
+            else {
+                //Jenny 请假一个错误widget
+                passwordLineEdit->setText("");
+                showMessageBox();
+            }
+        }
+        else {
+            qDebug() << "Choose patient by default";
+        }
+
+
+
+    });
 }
 
 RegisterWeb::~RegisterWeb()

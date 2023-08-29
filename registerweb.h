@@ -9,7 +9,7 @@
 #include <QtDebug>
 #include <QtSql>
 #include <QFileInfo>
-
+#include "doctorpage.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class RegisterWeb; }
 QT_END_NAMESPACE
@@ -24,6 +24,7 @@ public:
     void paintEvent(QPaintEvent*);
      HomePage* homePage;
      SignUp* signUp;
+     DoctorPage* doctorPage;
 
 public slots:
      void on_exit_Signal_Received();

@@ -175,7 +175,7 @@ HomePage::HomePage(QWidget *parent) :
     ui->mainChat->author = author;
 
     //设置服务器IP和PORT
-    QString ip = "127.0.0.1";
+    QString ip = "192.168.43.153";
     qint16 port = 8888;
     //向服务器发起连接请求
     tcpSocket->connectToHost(QHostAddress(ip),port);
